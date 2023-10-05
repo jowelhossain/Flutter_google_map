@@ -33,6 +33,8 @@ appBar: AppBar(title: Text("Google Map"), centerTitle: true,),
 
     body: Container(
       child: GoogleMap(
+          myLocationEnabled: true,
+          myLocationButtonEnabled: true,
           initialCameraPosition: CameraPosition(
 
         target: LatLng(23.8103,90.4125),
@@ -50,7 +52,18 @@ appBar: AppBar(title: Text("Google Map"), centerTitle: true,),
               //icon: markerIcon,
               infoWindow: InfoWindow(
                 title: "Dhaka"
-              )
+              ),
+
+            ),Marker(markerId:MarkerId("Dhaka"),
+              position: LatLng(23.8103, 90.5125),
+              draggable: true,
+              onDragEnd: (value){
+
+              },
+              //icon: markerIcon,
+              infoWindow: InfoWindow(
+                title: "Dhaka"
+              ),
 
             )
         }
